@@ -6,27 +6,36 @@ const maps = (q) =>
 
 // Resans datum — används av nedräkningen och hero
 export const TRIP = {
-  start: '2026-07-14',
+  start: '2026-07-13',
   end: '2026-07-17',
   base: 'Borgholm, norra Öland',
 }
 
 export const TRAVELLERS = [
-  { name: 'Du & din man', note: 'historieintresse 🏛️' },
-  { name: 'Elin & hennes man', note: 'med barn 1 år & 2 mån 👶' },
+  { name: 'Tiba & Oa', note: 'historieintresse 🏛️' },
+  { name: 'Elin, Dilom & Flrois (1 år)', note: 'familjen 👶' },
   { name: 'Dilan', note: 'keramik & loppis 🏺' },
 ]
 
 // Dag-för-dag — markerat som förslag, justerbart
 export const ITINERARY = [
   {
+    day: 'Måndag 13 juli',
+    title: 'Ankomst & incheckning',
+    icon: '🚗',
+    items: [
+      'Resa över Ölandsbron & incheckning',
+      'Handla mat till stugan',
+      'Första lekparksbesök för minstingen + en lugn kväll',
+    ],
+  },
+  {
     day: 'Tisdag 14 juli',
-    title: 'Ankomst + Victoriadagen',
+    title: 'Victoriadagen',
     icon: '👑',
     highlight: true,
     items: [
-      'Ankomst & incheckning, lugn förmiddag (ev. första lekparksbesök för minstingen)',
-      'Lunch i Borgholm',
+      'Lugn förmiddag, lunch i Borgholm',
       'Eftermiddag: Victoriadagen — allsång vid Solliden, hästkortegen & Victoriakonserten (se egen sektion)',
     ],
   },

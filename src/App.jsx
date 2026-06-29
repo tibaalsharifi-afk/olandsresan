@@ -38,6 +38,7 @@ function useLocalStorage(key, initial) {
 
 const NAV = [
   ['schema', 'Schema'],
+  ['karta', 'Karta'],
   ['victoria', 'Victoriadagen'],
   ['historia', 'Historia'],
   ['killarna', 'För killarna'],
@@ -209,7 +210,7 @@ export default function App() {
         <span className="eyebrow">Vår lilla utflykt</span>
         <h1>
           Öland
-          <span className="hero-dates">14–17 juli 2026</span>
+          <span className="hero-dates">13–17 juli 2026</span>
         </h1>
         <p className="hero-sub">
           Bas i {TRIP.base} · keramik, kungligheter, fornlämningar & glass
@@ -248,6 +249,27 @@ export default function App() {
           ))}
         </div>
       </Section>
+
+      {/* KARTA */}
+      <Section id="karta" eyebrow="Hitta rätt" title="Karta 🗺️">
+        <p className="lead">
+          Vår bas är {TRIP.base}. Klicka i kartan för att zooma och utforska området.
+        </p>
+        <div className="map-embed">
+          <iframe
+            title="Karta över Öland"
+            src="https://maps.google.com/maps?q=Borgholm,%20%C3%96land&z=10&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
+        <p className="map-hint">
+          📍 Varje plats längre ner har en egen <strong>“Öppna karta”</strong>-knapp som tar dig direkt dit.
+        </p>
+      </Section>
+
+      <Scallop />
 
       {/* VICTORIADAGEN */}
       <section id="victoria" className="section section-pink">
