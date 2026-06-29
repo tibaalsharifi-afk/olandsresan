@@ -13,7 +13,7 @@ export const TRIP = {
 
 export const TRAVELLERS = [
   { name: 'Tiba & Oa', note: 'historieintresse 🏛️' },
-  { name: 'Elin, Dilom & Flrois (1 år)', note: 'familjen 👶' },
+  { name: 'Elin, Dilom & Floris (1 år)', note: 'familjen 👶' },
   { name: 'Dilan', note: 'keramik & loppis 🏺' },
 ]
 
