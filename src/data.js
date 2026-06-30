@@ -172,6 +172,13 @@ export const CRAFTS = [
     blurb: 'Handgjord öländsk keramik för dukning och hem/trädgård.',
     map: maps('Paradisverkstaden keramik Öland'),
   },
+  {
+    name: 'Capellagårdens hantverksbutik',
+    blurb:
+      'Hantverksskolans butik i Vickleby — unika alster i keramik, textil & möbler av elever och lärare, plus böcker om hantverk. Öppet helger i juni och hela sommaren.',
+    travel: '~45 min söderut (Vickleby, södra Öland)',
+    map: maps('Capellagården Vickleby bygata 25 Öland'),
+  },
 ]
 
 export const FLEAMARKETS = {
