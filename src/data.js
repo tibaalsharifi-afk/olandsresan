@@ -272,37 +272,66 @@ export const DIET_TAGS = {
   kött: { label: 'Kött', icon: '🥩' },
 }
 
-// För killarna: öl & lokal mat (+ de gillar historia, se historiesektionen)
+// För killarna: ett mysigt ölställe med mat (+ de gillar historia, se historiesektionen)
 export const GUYS = {
   intro:
-    'Killarna gillar öl & lokal mat (och historia — kolla historiesektionen!). Öland har flera små hantverksbryggerier.',
+    'Ingen i gänget dricker särskilt mycket — men ett mysigt ölställe med riktigt god mat är värt ett besök. (Killarna gillar också historia — kolla historiesektionen!)',
   spots: [
     {
       name: 'Fireside Brewery (Rälla)',
-      blurb: 'Eget bryggeri nära Borgholm med craft beer, beer garden, mat och guidad ölprovning.',
+      blurb: 'Eget hantverksbryggeri nära Borgholm med craft beer, beer garden och riktigt god mat — lika trevligt för en öl som för en bit mat.',
       travel: '~15 min söder om Borgholm',
       map: maps('Fireside Brewery Rälla Öland'),
     },
-    {
-      name: 'Skedemosse Gårdsbryggeri',
-      blurb: 'Bokad provsmakning (ca 350 kr/pers) där ni provar ölsorter och ser bryggeriet.',
-      travel: 'Norra Öland',
-      map: maps('Skedemosse Gårdsbryggeri Öland'),
-    },
-    {
-      name: 'Kackelbryggeriet / Kackelstugan',
-      blurb: 'Mikrobryggeri med lager & ale i tappen hela sommaren — arrangerar även "Ölsafari".',
-      travel: 'Norra Öland',
-      map: maps('Kackelstugan Kackelbryggeriet Öland'),
-    },
-    {
-      name: 'Lammets Vingård',
-      blurb: 'Vingård, bryggeri & gårdsbränneri — lunch eller fika bland vinrankor med lokala provningar.',
-      travel: 'Norra Öland',
-      map: maps('Lammets Vingård Öland'),
-    },
   ],
 }
+
+// Vårt boende (Borgholm) + närliggande fika/bröd & bad
+export const HOME = {
+  address: 'Ivans väg 16, Borgholm',
+  map: maps('Ivans väg 16 Borgholm Öland'),
+}
+
+export const CAFES = [
+  {
+    name: 'Stenugnsbageriet Olof',
+    blurb:
+      'Stenugnsbakat surdegsbröd på Ölandsvete + baguetter, frallor, kanel- & kardemummabullar och croissanter. Perfekt att köpa bröd hem.',
+    travel: 'Borgholm centrum',
+    map: maps('Stenugnsbageriet Olof Borgholm'),
+  },
+  {
+    name: 'Nya Conditoriet',
+    blurb:
+      'Mysigt gammeldags konditori & café på Storgatan (anor från 1940-talet). Bröd bakat i eget bageri — fika på plats eller ta med hem.',
+    travel: 'Storgatan, Borgholm',
+    map: maps('Nya Conditoriet Storgatan Borgholm'),
+  },
+  {
+    name: 'Boulangerie (Hotell Borgholm)',
+    blurb:
+      'Stenugnsbakat bröd på lokalt spannmål, bullar, croissanter och fina fikaalternativ mitt i Borgholm.',
+    travel: 'Borgholm centrum',
+    map: maps('Boulangerie Hotell Borgholm'),
+  },
+]
+
+export const BEACHES = [
+  {
+    name: 'Kapelludden',
+    blurb:
+      'Långgrund liten sandstrand mitt i Borgholm, granne med badhuset. Närmast boendet — lätt att svänga förbi.',
+    travel: 'I Borgholm',
+    map: maps('Kapelludden badplats Borgholm'),
+  },
+  {
+    name: 'Köpingsviks strand (Köpingbaden)',
+    blurb:
+      'En av Ölands mest barnvänliga stränder — långgrund sandstrand med badbrygga, glass och minigolf nära. Toppen för 1-åringen.',
+    travel: '~10 min (Köpingsvik)',
+    map: maps('Köpingsviks strand Köpingbaden Öland'),
+  },
+]
 
 export const PACKING = {
   Allmänt: [

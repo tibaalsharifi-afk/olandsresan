@@ -12,6 +12,9 @@ import {
   DIET_NOTE,
   DIET_TAGS,
   GUYS,
+  HOME,
+  CAFES,
+  BEACHES,
   PACKING,
   SOURCES,
 } from './data.js'
@@ -45,6 +48,7 @@ const NAV = [
   ['keramik', 'Keramik & loppis'],
   ['lek', 'Lekparker'],
   ['mat', 'Mat'],
+  ['boende', 'Nära boendet'],
   ['packlista', 'Packlista'],
 ]
 
@@ -386,13 +390,37 @@ export default function App() {
 
       <Scallop />
 
+      {/* NÄRA BOENDET */}
+      <Section id="boende" eyebrow="Nära boendet" title="Fika, bröd & bad 🏡">
+        <p className="lead">
+          Vi bor på {HOME.address}. Här är fik & bageri för bröd hem, plus två badplatser nära.{' '}
+          <a className="inline-link" href={HOME.map} target="_blank" rel="noreferrer">
+            📍 Boendet på kartan
+          </a>
+        </p>
+        <h3 className="subhead">Café & bageri 🥐</h3>
+        <div className="grid">
+          {CAFES.map((p) => (
+            <PlaceCard key={p.name} {...p} />
+          ))}
+        </div>
+        <h3 className="subhead">Badplatser 🏖️</h3>
+        <div className="grid">
+          {BEACHES.map((p) => (
+            <PlaceCard key={p.name} {...p} />
+          ))}
+        </div>
+      </Section>
+
+      <Scallop />
+
       {/* PACKLISTA */}
       <Section id="packlista" eyebrow="Glöm inget" title="Packlista 🧳">
         <Packing />
       </Section>
 
       <footer className="footer">
-        <p>Gjord med 🌸 inför vår Ölandsresa · 14–17 juli 2026</p>
+        <p>Gjord med 🌸 inför vår Ölandsresa · 13–17 juli 2026</p>
         <div className="link-row">
           {SOURCES.map((s) => (
             <a key={s.url} href={s.url} target="_blank" rel="noreferrer">

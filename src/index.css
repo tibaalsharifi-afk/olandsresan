@@ -419,6 +419,16 @@ a {
   color: var(--ink-soft);
   margin-top: 14px;
 }
+.inline-link {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--red-deep);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.inline-link:hover {
+  text-decoration: underline;
+}
 @media (max-width: 600px) {
   .map-embed iframe {
     height: 320px;
