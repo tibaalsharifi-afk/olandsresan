@@ -40,7 +40,7 @@ function useLocalStorage(key, initial) {
 }
 
 const NAV = [
-  ['schema', 'Schema'],
+  ['schema', 'Aktiviteter'],
   ['karta', 'Karta'],
   ['victoria', 'Victoriadagen'],
   ['historia', 'Historia'],
@@ -233,7 +233,7 @@ export default function App() {
       <Scallop />
 
       {/* SCHEMA */}
-      <Section id="schema" eyebrow="Dag för dag" title="Vårt schema">
+      <Section id="schema" eyebrow="Dag för dag" title="Förslag på aktiviteter">
         <p className="lead">Ett förslag — flytta runt som ni vill! 🌿</p>
         <div className="grid">
           {ITINERARY.map((d) => (
