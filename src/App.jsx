@@ -44,11 +44,11 @@ const NAV = [
   ['karta', 'Karta'],
   ['victoria', 'Victoriadagen'],
   ['historia', 'Historia'],
+  ['boende', 'Nära boendet'],
   ['killarna', 'För killarna'],
   ['keramik', 'Keramik & loppis'],
   ['lek', 'Lekparker'],
   ['mat', 'Mat'],
-  ['boende', 'Nära boendet'],
   ['packlista', 'Packlista'],
 ]
 
@@ -308,10 +308,34 @@ export default function App() {
       {/* HISTORIA */}
       <Section id="historia" eyebrow="För historieälskaren" title="Historia i norr 🪨">
         <p className="lead">
-          Skeppssättningar och fornborgar nära Borgholm — ingen lång körning söderut.
+          Skeppssättningar och fornborgar. Källa ödekyrka ligger granne med Löttorp — resten en tur söderut.
         </p>
         <div className="grid">
           {HISTORY.map((p) => (
+            <PlaceCard key={p.name} {...p} />
+          ))}
+        </div>
+      </Section>
+
+      <Scallop />
+
+      {/* NÄRA BOENDET */}
+      <Section id="boende" eyebrow="Nära boendet" title="Fika, bröd & bad 🏡">
+        <p className="lead">
+          Vi bor på {HOME.address}. Här är fik & bageri för bröd hem, plus två badplatser nära.{' '}
+          <a className="inline-link" href={HOME.map} target="_blank" rel="noreferrer">
+            📍 Boendet på kartan
+          </a>
+        </p>
+        <h3 className="subhead">Café & bageri 🥐</h3>
+        <div className="grid">
+          {CAFES.map((p) => (
+            <PlaceCard key={p.name} {...p} />
+          ))}
+        </div>
+        <h3 className="subhead">Badplatser 🏖️</h3>
+        <div className="grid">
+          {BEACHES.map((p) => (
             <PlaceCard key={p.name} {...p} />
           ))}
         </div>
@@ -387,30 +411,6 @@ export default function App() {
           </ul>
         </div>
       </section>
-
-      <Scallop />
-
-      {/* NÄRA BOENDET */}
-      <Section id="boende" eyebrow="Nära boendet" title="Fika, bröd & bad 🏡">
-        <p className="lead">
-          Vi bor på {HOME.address}. Här är fik & bageri för bröd hem, plus två badplatser nära.{' '}
-          <a className="inline-link" href={HOME.map} target="_blank" rel="noreferrer">
-            📍 Boendet på kartan
-          </a>
-        </p>
-        <h3 className="subhead">Café & bageri 🥐</h3>
-        <div className="grid">
-          {CAFES.map((p) => (
-            <PlaceCard key={p.name} {...p} />
-          ))}
-        </div>
-        <h3 className="subhead">Badplatser 🏖️</h3>
-        <div className="grid">
-          {BEACHES.map((p) => (
-            <PlaceCard key={p.name} {...p} />
-          ))}
-        </div>
-      </Section>
 
       <Scallop />
 

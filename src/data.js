@@ -8,7 +8,7 @@ const maps = (q) =>
 export const TRIP = {
   start: '2026-07-13',
   end: '2026-07-17',
-  base: 'Borgholm, norra Öland',
+  base: 'Löttorp, norra Öland',
 }
 
 export const TRAVELLERS = [
@@ -102,45 +102,45 @@ export const VICTORIA = {
 
 export const HISTORY = [
   {
+    name: 'Källa ödekyrka',
+    blurb:
+      'Medeltida försvarskyrka i sten — atmosfärisk ruin med tjocka murar. Ligger granne med Löttorp, så börja gärna här.',
+    travel: '~10 min söderut (Källa)',
+    map: maps('Källa ödekyrka Öland'),
+  },
+  {
     name: 'Karums alvar – "Noaks ark"',
     blurb:
       '26 meter lång skeppssättning och ett järnåldersgravfält med ca 70 synliga fornlämningar. Mäktigast i kvällsljus.',
-    travel: '~15–20 min från Borgholm (nära Köping)',
+    travel: '~35 min söderut (nära Köping)',
     map: maps('Karums alvar Noaks ark skeppssättning Öland'),
-  },
-  {
-    name: 'Gråborg & S:t Knuts kapell',
-    blurb:
-      'Ölands största fornborg, strategiskt placerad i inlandet. Intill ligger den medeltida ödekyrkan S:t Knuts kapell.',
-    travel: '~25 min från Borgholm',
-    map: maps('Gråborg fornborg Öland'),
   },
   {
     name: 'Köpingsvik',
     blurb:
       'Vikingatida handelsplats med lång historia, kyrka och runstenar. Trevlig promenad och historia på nära håll.',
-    travel: '~15 min från Borgholm',
+    travel: '~30 min söderut',
     map: maps('Köpingsvik Öland'),
+  },
+  {
+    name: 'Gråborg & S:t Knuts kapell',
+    blurb:
+      'Ölands största fornborg, strategiskt placerad i inlandet. Intill ligger den medeltida ödekyrkan S:t Knuts kapell.',
+    travel: '~40 min söderut',
+    map: maps('Gråborg fornborg Öland'),
   },
   {
     name: 'Ismantorps borg',
     blurb:
       'En av Sveriges bäst bevarade fornborgar (ca 200–600 e.Kr.) med 95 synliga husgrunder och hela nio portar. Ligger mystiskt mitt i Mittlandsskogen.',
-    travel: '~30 min från Borgholm',
+    travel: '~45 min söderut',
     map: maps('Ismantorps borg Öland'),
-  },
-  {
-    name: 'Källa ödekyrka',
-    blurb:
-      'Medeltida försvarskyrka i sten på norra Öland — atmosfärisk ruin med tjocka murar.',
-    travel: '~35 min norrut',
-    map: maps('Källa ödekyrka Öland'),
   },
   {
     name: 'Borgholms slottsruin',
     blurb:
-      'Norra Europas största slottsruin, mitt i Borgholm. Guidningar, utställningar och barnaktiviteter innanför murarna.',
-    travel: 'I Borgholm',
+      'Norra Europas största slottsruin. Guidningar, utställningar och barnaktiviteter innanför murarna. Kombinera med Victoriadagen!',
+    travel: '~30 min söderut (Borgholm)',
     map: maps('Borgholms slott slottsruin'),
   },
 ]
@@ -154,17 +154,20 @@ export const CRAFTS = [
   },
   {
     name: 'Källa Keramik',
-    blurb: 'Tre keramiker, längs väg 136 norr om Borgholm. Brukskeramik och skulptur.',
+    blurb: 'Tre keramiker längs väg 136, nära Källa. Brukskeramik och skulptur — närmast boendet.',
+    travel: '~10–15 min söderut',
     map: maps('Källa Keramik Öland'),
   },
   {
     name: 'Alséns',
     blurb: 'Svensk keramik & design vid Landborgen med utsikt mot Kalmarsund. Se hantverket på plats.',
+    travel: '~30 min söderut',
     map: maps('Alséns keramik Öland'),
   },
   {
     name: 'Kookoon (Borgholm)',
     blurb: 'Egendesignad brukskeramik på Storgatan, mitt i Borgholm.',
+    travel: '~30 min söderut (Borgholm)',
     map: maps('Kookoon keramik Storgatan Borgholm'),
   },
   {
@@ -176,7 +179,7 @@ export const CRAFTS = [
     name: 'Capellagårdens hantverksbutik',
     blurb:
       'Hantverksskolans butik i Vickleby — unika alster i keramik, textil & möbler av elever och lärare, plus böcker om hantverk. Öppet helger i juni och hela sommaren.',
-    travel: '~45 min söderut (Vickleby, södra Öland)',
+    travel: '~1 tim 10 söderut (Vickleby, södra Öland)',
     map: maps('Capellagården Vickleby bygata 25 Öland'),
   },
 ]
@@ -194,24 +197,28 @@ export const FLEAMARKETS = {
 
 export const PLAYGROUNDS = [
   {
-    name: 'Sollidens lekpark',
-    blurb: 'Fin lekpark precis utanför grindarna till Sollidens slott. Smidigt att kombinera med trädgårdsbesöket.',
-    map: maps('Sollidens slott lekpark Borgholm'),
-  },
-  {
     name: 'Kotteparken, Löttorp',
-    blurb: 'Linbana, klätterställningar och flera gungor (inkl. kompisgunga). Renoverad våren 2026.',
+    blurb: 'Linbana, klätterställningar och flera gungor (inkl. kompisgunga). Renoverad våren 2026. I Löttorp — närmast!',
+    travel: 'I Löttorp',
     map: maps('Kotteparken Sandvägen 1 Löttorp'),
-  },
-  {
-    name: 'Källa Glassgård',
-    blurb: 'Familjeägd glassrestaurang på norra Öland med stort lekland — glass + lek i ett.',
-    map: maps('Källa Glassgård Öland'),
   },
   {
     name: 'Lådbilslandet, Löttorp',
     blurb: 'Miniatyrvärld där de mindre barnen kör runt i egna lådbilar. Perfekt för de små.',
+    travel: 'I Löttorp',
     map: maps('Lådbilslandet Löttorp Öland'),
+  },
+  {
+    name: 'Källa Glassgård',
+    blurb: 'Familjeägd glassrestaurang på norra Öland med stort lekland — glass + lek i ett.',
+    travel: '~10 min söderut',
+    map: maps('Källa Glassgård Öland'),
+  },
+  {
+    name: 'Sollidens lekpark',
+    blurb: 'Fin lekpark precis utanför grindarna till Sollidens slott. Smidigt att kombinera med trädgårdsbesöket.',
+    travel: '~30 min söderut (Borgholm)',
+    map: maps('Sollidens slott lekpark Borgholm'),
   },
 ]
 
@@ -272,66 +279,66 @@ export const DIET_TAGS = {
   kött: { label: 'Kött', icon: '🥩' },
 }
 
-// För killarna: ett mysigt ölställe med mat (+ de gillar historia, se historiesektionen)
-export const GUYS = {
-  intro:
-    'Ingen i gänget dricker särskilt mycket — men ett mysigt ölställe med riktigt god mat är värt ett besök. (Killarna gillar också historia — kolla historiesektionen!)',
-  spots: [
-    {
-      name: 'Fireside Brewery (Rälla)',
-      blurb: 'Eget hantverksbryggeri nära Borgholm med craft beer, beer garden och riktigt god mat — lika trevligt för en öl som för en bit mat.',
-      travel: '~15 min söder om Borgholm',
-      map: maps('Fireside Brewery Rälla Öland'),
-    },
-  ],
-}
-
-// Vårt boende (Borgholm) + närliggande fika/bröd & bad
+// Vårt boende (Löttorp, norra Öland) + närliggande fika/bröd & bad
 export const HOME = {
-  address: 'Ivans väg 16, Borgholm',
-  map: maps('Ivans väg 16 Borgholm Öland'),
+  address: 'Ivans väg 16, Löttorp',
+  map: maps('Ivans väg 16 Löttorp Öland'),
 }
 
 export const CAFES = [
   {
-    name: 'Stenugnsbageriet Olof',
+    name: 'Löttorps Konditori',
     blurb:
-      'Stenugnsbakat surdegsbröd på Ölandsvete + baguetter, frallor, kanel- & kardemummabullar och croissanter. Perfekt att köpa bröd hem.',
-    travel: 'Borgholm centrum',
-    map: maps('Stenugnsbageriet Olof Borgholm'),
+      'Traditionellt konditori & bageri mitt i Löttorp — tårtor, smörgåsar och färskt surdegsbröd. Närmast boendet.',
+    travel: 'I Löttorp',
+    map: maps('Löttorps Konditori Öland'),
   },
   {
-    name: 'Nya Conditoriet',
+    name: 'Kaffestugan i Böda',
     blurb:
-      'Mysigt gammeldags konditori & café på Storgatan (anor från 1940-talet). Bröd bakat i eget bageri — fika på plats eller ta med hem.',
-    travel: 'Storgatan, Borgholm',
-    map: maps('Nya Conditoriet Storgatan Borgholm'),
+      'Älskat hantverksbageri nära Böda hamn — långjäst stenugnsbakat surdegsbröd, vetebröd och fina bakverk. Perfekt fika + bröd hem.',
+    travel: '~10 min mot Böda',
+    map: maps('Kaffestugan i Böda Öland'),
   },
   {
-    name: 'Boulangerie (Hotell Borgholm)',
+    name: 'Bageriet vid Böda Sand',
     blurb:
-      'Stenugnsbakat bröd på lokalt spannmål, bullar, croissanter och fina fikaalternativ mitt i Borgholm.',
-    travel: 'Borgholm centrum',
-    map: maps('Boulangerie Hotell Borgholm'),
+      'Bageri där allt bröd bakas från grunden med smör (Bödasandsallén). Doften av nybakat ligger som dimma på morgonen.',
+    travel: '~12 min (Böda Sand)',
+    map: maps('Bageriet Böda Sand Löttorp'),
   },
 ]
 
 export const BEACHES = [
   {
-    name: 'Kapelludden',
+    name: 'Böda Sand',
     blurb:
-      'Långgrund liten sandstrand mitt i Borgholm, granne med badhuset. Närmast boendet — lätt att svänga förbi.',
-    travel: 'I Borgholm',
-    map: maps('Kapelludden badplats Borgholm'),
+      'En av Sveriges finaste stränder — flera kilometer mjuk sand och långgrunt vatten. Toaletter, aktiviteter och barnvänligt. Närmast boendet.',
+    travel: '~12 min (Böda)',
+    map: maps('Böda Sand strand Öland'),
   },
   {
-    name: 'Köpingsviks strand (Köpingbaden)',
+    name: 'Lyckesand',
     blurb:
-      'En av Ölands mest barnvänliga stränder — långgrund sandstrand med badbrygga, glass och minigolf nära. Toppen för 1-åringen.',
-    travel: '~10 min (Köpingsvik)',
-    map: maps('Köpingsviks strand Köpingbaden Öland'),
+      'Långgrund, barnvänlig sandstrand strax norr om Böda sand. Träramper ner till sanden gör det lätt med barnvagn — toppen för 1-åringen.',
+    travel: '~15 min (Böda)',
+    map: maps('Lyckesand strand Böda Öland'),
   },
 ]
+
+// För killarna: ett mysigt ölställe med mat (+ de gillar historia, se historiesektionen)
+export const GUYS = {
+  intro:
+    'Ingen i gänget dricker särskilt mycket — men ett mysigt ölställe med riktigt god mat är värt ett besök. Ligger en bit söderut, så kombinera gärna med en dag i Borgholm/historian.',
+  spots: [
+    {
+      name: 'Fireside Brewery (Rälla)',
+      blurb: 'Eget hantverksbryggeri med craft beer, beer garden och riktigt god mat — lika trevligt för en öl som för en bit mat.',
+      travel: '~45 min söderut (Rälla)',
+      map: maps('Fireside Brewery Rälla Öland'),
+    },
+  ],
+}
 
 export const PACKING = {
   Allmänt: [
