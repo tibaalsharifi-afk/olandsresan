@@ -3,6 +3,7 @@ import {
   TRIP,
   TRAVELLERS,
   ITINERARY,
+  ROADSTOP,
   VICTORIA,
   HISTORY,
   CRAFTS,
@@ -235,6 +236,14 @@ export default function App() {
       {/* SCHEMA */}
       <Section id="schema" eyebrow="Dag för dag" title="Förslag på aktiviteter">
         <p className="lead">Ett förslag — flytta runt som ni vill! 🌿</p>
+        <div className="card day-highlight roadstop-card">
+          <span className="day-icon">🚗</span>
+          <span className="day-label">På vägen ner</span>
+          <h3>{ROADSTOP.name}</h3>
+          <p>{ROADSTOP.blurb}</p>
+          <p className="travel">📍 {ROADSTOP.travel}</p>
+          <MapLink href={ROADSTOP.map} />
+        </div>
         <div className="grid">
           {ITINERARY.map((d) => (
             <div

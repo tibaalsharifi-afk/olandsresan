@@ -71,6 +71,15 @@ export const ITINERARY = [
   },
 ]
 
+// Halvvägs-stopp på väg ner till Öland (E22)
+export const ROADSTOP = {
+  name: 'Tindered Trädgård & Café',
+  blurb:
+    'Mysigt växthuscafé vid E22 i Edsbruk — fika, stenugnsbakad pizza, sallad & smörgås, plus blommor och en lekplats för barnen. Perfekt bensträckare och halvvägs-fika på väg ner.',
+  travel: 'E22, Edsbruk · öppet 11–18',
+  map: maps('Tindered Trädgård Café Edsbruk E22'),
+}
+
 // Verifierat schema för Victoriadagen 14 juli (kungahuset.se / victoriadagarna.se)
 export const VICTORIA = {
   note: 'Victoriadagarna (festivalen) pågår 12–15 juli. Själva födelsedagen firas 14 juli.',

@@ -328,6 +328,9 @@ a {
   border-color: var(--red);
   background: linear-gradient(180deg, var(--pink-soft), var(--cream-card));
 }
+.roadstop-card {
+  margin-bottom: 18px;
+}
 
 /* ---------- Flower list ---------- */
 .flower-list {
