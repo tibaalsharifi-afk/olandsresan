@@ -521,6 +521,103 @@ a {
   color: var(--ink-soft);
 }
 
+/* ---------- Lyckohjul ---------- */
+.wheel-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.wheel-wrap {
+  position: relative;
+  width: 300px;
+  max-width: 82vw;
+}
+.wheel-spin {
+  width: 100%;
+  will-change: transform;
+  filter: drop-shadow(0 10px 22px rgba(156, 43, 32, 0.22));
+}
+.wheel-spin svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+}
+.wheel-pointer {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 30px solid var(--red-deep);
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+}
+.wheel-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wheel-btn {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 13px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.wheel-btn:hover:not(:disabled) {
+  background: var(--red-deep);
+}
+.wheel-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.wheel-btn-alt {
+  background: var(--green);
+}
+.wheel-btn-alt:hover:not(:disabled) {
+  background: #5b7449;
+}
+.wheel-results {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wheel-result {
+  background: var(--cream-card);
+  border: 2px dashed var(--berry);
+  border-radius: 18px;
+  padding: 12px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 130px;
+}
+.wheel-result span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.wheel-result strong {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  color: var(--red-deep);
+}
+
 /* ---------- Footer ---------- */
 .footer {
   background: var(--red);

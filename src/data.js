@@ -17,6 +17,9 @@ export const TRAVELLERS = [
   { name: 'Dilan', note: 'keramik & loppis 🏺' },
 ]
 
+// Vuxna som kan laga mat/diska (Floris, 1 år, slipper) — till lyckohjulet
+export const CHORE_PEOPLE = ['Tiba', 'Oa', 'Elin', 'Dilom', 'Dilan']
+
 // Dag-för-dag — markerat som förslag, justerbart
 export const ITINERARY = [
   {

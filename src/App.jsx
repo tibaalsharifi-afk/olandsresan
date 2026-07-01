@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   TRIP,
   TRAVELLERS,
@@ -16,6 +16,7 @@ import {
   HOME,
   CAFES,
   BEACHES,
+  CHORE_PEOPLE,
   PACKING,
   SOURCES,
 } from './data.js'
@@ -50,6 +51,7 @@ const NAV = [
   ['keramik', 'Keramik & loppis'],
   ['lek', 'Lekparker'],
   ['mat', 'Mat'],
+  ['hjul', 'Lyckohjul'],
   ['packlista', 'Packlista'],
 ]
 
@@ -189,6 +191,126 @@ function Packing() {
         ))}
       </div>
     </>
+  )
+}
+
+const WHEEL_COLORS = ['#C0392B', '#E0A54F', '#6F8B5B', '#B13A4E', '#5E86A3', '#CC7A54']
+
+function Wheel() {
+  const [rotation, setRotation] = useState(0)
+  const [spinning, setSpinning] = useState(false)
+  const [cook, setCook] = useState(null)
+  const [dishes, setDishes] = useState(null)
+  const pending = useRef(null)
+
+  const people = CHORE_PEOPLE
+  const R = 130
+  const C = 130
+  const seg = 360 / people.length
+  const polar = (deg, radius) => {
+    const a = (deg * Math.PI) / 180
+    return [C + radius * Math.sin(a), C - radius * Math.cos(a)]
+  }
+  const slices = people.map((name, i) => {
+    const [x1, y1] = polar(i * seg, R)
+    const [x2, y2] = polar((i + 1) * seg, R)
+    const [lx, ly] = polar(i * seg + seg / 2, R * 0.62)
+    const large = seg > 180 ? 1 : 0
+    return {
+      name,
+      color: WHEEL_COLORS[i % WHEEL_COLORS.length],
+      d: `M ${C} ${C} L ${x1.toFixed(2)} ${y1.toFixed(2)} A ${R} ${R} 0 ${large} 1 ${x2.toFixed(2)} ${y2.toFixed(2)} Z`,
+      lx,
+      ly,
+    }
+  })
+
+  const spin = (mode) => {
+    if (spinning) return
+    const exclude = mode === 'cook' ? dishes : cook
+    const pool = people.filter((n) => n !== exclude)
+    const chosen = pool[Math.floor(Math.random() * pool.length)]
+    const idx = people.indexOf(chosen)
+    const centerAngle = idx * seg + seg / 2
+    const desiredMod = (360 - centerAngle + 360) % 360
+    const currentMod = ((rotation % 360) + 360) % 360
+    const delta = (desiredMod - currentMod + 360) % 360
+    pending.current = { mode, chosen }
+    setSpinning(true)
+    setRotation(rotation + 360 * 5 + delta)
+  }
+
+  const onDone = () => {
+    if (!pending.current) return
+    const { mode, chosen } = pending.current
+    if (mode === 'cook') setCook(chosen)
+    else setDishes(chosen)
+    pending.current = null
+    setSpinning(false)
+  }
+
+  return (
+    <div className="wheel-block">
+      <div className="wheel-wrap">
+        <div className="wheel-pointer" aria-hidden="true" />
+        <div
+          className="wheel-spin"
+          style={{
+            transform: `rotate(${rotation}deg)`,
+            transition: spinning
+              ? 'transform 4.2s cubic-bezier(0.17, 0.67, 0.21, 1)'
+              : 'none',
+          }}
+          onTransitionEnd={onDone}
+        >
+          <svg viewBox="0 0 260 260">
+            {slices.map((s) => (
+              <path key={s.name} d={s.d} fill={s.color} stroke="#fffdf8" strokeWidth="2" />
+            ))}
+            {slices.map((s) => (
+              <text
+                key={`t-${s.name}`}
+                x={s.lx}
+                y={s.ly}
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontSize="15"
+                fontWeight="800"
+                fill="#fffdf8"
+              >
+                {s.name}
+              </text>
+            ))}
+            <circle cx={C} cy={C} r="128" fill="none" stroke="#9c2b20" strokeWidth="3" />
+            <circle cx={C} cy={C} r="11" fill="#fffdf8" stroke="#9c2b20" strokeWidth="2" />
+          </svg>
+        </div>
+      </div>
+
+      <div className="wheel-buttons">
+        <button className="wheel-btn" onClick={() => spin('cook')} disabled={spinning}>
+          🍳 Vem lagar maten?
+        </button>
+        <button
+          className="wheel-btn wheel-btn-alt"
+          onClick={() => spin('dishes')}
+          disabled={spinning}
+        >
+          🧽 Vem diskar?
+        </button>
+      </div>
+
+      <div className="wheel-results">
+        <div className="wheel-result">
+          <span>🍳 Lagar maten</span>
+          <strong>{cook || '—'}</strong>
+        </div>
+        <div className="wheel-result">
+          <span>🧽 Diskar</span>
+          <strong>{dishes || '—'}</strong>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -420,6 +542,17 @@ export default function App() {
           </ul>
         </div>
       </section>
+
+      <Scallop />
+
+      {/* LYCKOHJUL */}
+      <Section id="hjul" eyebrow="Vem gör vad?" title="Lyckohjulet 🎡">
+        <p className="lead">
+          Snurra för att bestämma vem som lagar maten och vem som diskar! Floris slipper — han är för
+          liten. 👶
+        </p>
+        <Wheel />
+      </Section>
 
       <Scallop />
 
