@@ -64,6 +64,10 @@ a {
   flex-wrap: wrap;
 }
 
+.topbar {
+  justify-content: space-between;
+}
+
 .brand {
   font-family: 'Fraunces', serif;
   font-size: 1.2rem;
@@ -71,32 +75,128 @@ a {
   color: var(--red-deep);
   text-decoration: none;
   white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
-.nav {
+/* ---------- Hamburgerknapp ---------- */
+.hamburger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pink-soft);
+  border: 2px solid var(--red);
+  color: var(--red-deep);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.hamburger:hover {
+  background: var(--pink-bg);
+}
+.hamburger-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ---------- Menypanel ---------- */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 44, 42, 0.35);
+  z-index: 30;
+}
+.menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 31;
+  width: min(80vw, 320px);
+  height: 100%;
+  background: var(--cream-card);
+  border-left: 3px dotted var(--red);
+  box-shadow: -10px 0 30px rgba(156, 43, 32, 0.15);
+  padding: 72px 16px 24px;
   display: flex;
-  gap: 4px;
-  overflow-x: auto;
-  flex: 1;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
 }
-.nav::-webkit-scrollbar {
-  display: none;
-}
-
-.nav a {
-  text-decoration: none;
+.menu-item {
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
   color: var(--ink);
   font-weight: 700;
-  font-size: 0.9rem;
-  padding: 6px 12px;
-  border-radius: 999px;
+  font-size: 1.02rem;
+  padding: 12px 14px;
+  border-radius: 14px;
   white-space: nowrap;
 }
-.nav a:hover {
+.menu-item:hover {
   background: var(--pink-soft);
   color: var(--red-deep);
+}
+.menu-item.active {
+  background: var(--pink-bg);
+  color: var(--red-deep);
+}
+
+/* ---------- Undersida ---------- */
+.subpage {
+  min-height: 50vh;
+}
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin: 20px auto 0;
+  background: var(--cream-card);
+  border: 2px solid var(--red);
+  color: var(--red-deep);
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.back-btn:hover {
+  background: var(--pink-soft);
+}
+
+/* ---------- Startsidans kort ---------- */
+.home-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  font: inherit;
+  color: inherit;
+}
+.home-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--red);
+}
+.home-card-icon {
+  font-size: 1.8rem;
+}
+.home-card h3 {
+  margin: 6px 0 4px;
+}
+.home-card-cta {
+  margin-top: auto;
+  padding-top: 10px;
+  font-weight: 800;
+  color: var(--red);
 }
 
 /* ---------- Hero ---------- */
